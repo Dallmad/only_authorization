@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   font-style: normal;
   font-weight: 700;
   font-size: 64px;

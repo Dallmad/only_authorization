@@ -3,6 +3,8 @@ import {SubmitHandler, useForm, Controller, useFormState} from 'react-hook-form'
 import {loginValidation, passwordValidation} from './validation';
 import {useTypedDispatch} from '../../state/store';
 import {login} from '../../state/middlewares/auth';
+import {LoginWrapper, StyledCheckbox, StyledErrorButton, StyledInput} from './Login.styles';
+import {VALID_EMAIL} from '../../constants/validation';
 
 export type LoginType = {
     login: string,
@@ -16,12 +18,17 @@ export const Login: React.FC = () => {
     const {handleSubmit, control} = useForm<LoginType>();
     const {errors} = useFormState({control})
 
-    console.log('errors',errors)
+    console.log('errors', errors)
     const onSubmit: SubmitHandler<LoginType> = data => dispatch(login(data));
 
 
     return (
-        <div>
+        <LoginWrapper>
+
+            {false && <StyledErrorButton>
+                <label>!</label>
+                Пользователя {VALID_EMAIL} не существует
+            </StyledErrorButton>}
             <form
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -33,10 +40,10 @@ export const Login: React.FC = () => {
                     name={'login'}
                     rules={loginValidation}
                     render={({field}) => (
-                        <input
+                        <StyledInput
                             type="text"
                             name={'login'}
-                            value={field.value||''}
+                            value={field.value || ''}
                             onChange={(e) => field.onChange(e)}
                         />
                     )}
@@ -52,10 +59,10 @@ export const Login: React.FC = () => {
                     name={'password'}
                     rules={passwordValidation}
                     render={({field}) => (
-                        <input
+                        <StyledInput
                             type="password"
                             name={'password'}
-                            value={field.value||''}
+                            value={field.value || ''}
                             onChange={(e) => field.onChange(e)}
                         />
                     )}
@@ -68,10 +75,10 @@ export const Login: React.FC = () => {
                         control={control}
                         name={'checkbox'}
                         render={({field}) => (
-                            <input
+                            <StyledCheckbox
                                 type='checkbox'
                                 name={'checkbox'}
-                                checked={field.value||false}
+                                checked={field.value || false}
                                 onChange={(e) => field.onChange(e)}
                             />
                         )}
@@ -85,6 +92,6 @@ export const Login: React.FC = () => {
 
 
             </form>
-        </div>
+        </LoginWrapper>
     )
 }

@@ -10,7 +10,6 @@ export const ProfileWrapper = styled.div`
   font-size: 40px;
   line-height: 48px;
   color: #000000;
-  //min-height: 100vh;
   
   label {
     font-weight: 600;
