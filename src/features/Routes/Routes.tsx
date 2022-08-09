@@ -1,9 +1,9 @@
 import React from 'react'
 import {Navigate, Route, Routes} from 'react-router-dom'
-import {PATH} from '../../constants/routes';
-import {Error404} from '../ErrorPage/Error404';
-import {Profile} from '../Profile/Profile';
-import {Login} from '../Auth/Login';
+import {PATH} from '../../constants/routes'
+import {Error404} from '../ErrorPage'
+import {Profile} from '../Profile'
+import {Login} from '../Auth'
 
 export const AppRoutes:React.FC = () => {
 

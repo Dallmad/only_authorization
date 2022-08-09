@@ -2,11 +2,12 @@ import React from 'react'
 import {TITLE} from '../../constants/header';
 import {PATH} from '../../constants/routes';
 import { NavLink } from 'react-router-dom';
+import {HeaderWrapper} from './Header.styles';
 
 export const Header:React.FC = () => {
 
     return (
-        <div>
+        <HeaderWrapper>
             <NavLink
                 to={PATH.PROFILE}
                 //className={navData => navData.isActive ? 'link_active' : 'link'}
@@ -15,7 +16,7 @@ export const Header:React.FC = () => {
                 to={PATH.AUTHORIZATION}
                 //className={navData => navData.isActive ? 'link_active' : 'link'}
             >Auth</NavLink>
-           {/* {TITLE}*/}
-        </div>
+            {TITLE}
+        </HeaderWrapper>
     )
 }

@@ -4,6 +4,7 @@ import {App} from './app/App'
 import {HashRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {store} from './state/store';
+import {Global} from './index.styles';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <HashRouter>
         <Provider store={store}>
+            <Global/>
             <App/>
         </Provider>
     </HashRouter>

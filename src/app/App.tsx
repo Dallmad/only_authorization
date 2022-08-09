@@ -1,12 +1,15 @@
 import React from 'react'
-import {AppRoutes} from '../features/Routes/Routes'
-import {Header} from '../features/Header/Header'
+import {AppRoutes} from '../features/Routes'
+import {Header} from '../features/Header'
+import {AppWrapper} from './App.styles'
 
 export const App = () => {
   return (
-    <div >
+    <>
         <Header/>
-        <AppRoutes/>
-    </div>
+        <AppWrapper >
+            <AppRoutes/>
+        </AppWrapper>
+    </>
   )
 }
