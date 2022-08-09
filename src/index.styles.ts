@@ -9,5 +9,5 @@ export const Global = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFFFFF;
-  //border: none;
 }`
+

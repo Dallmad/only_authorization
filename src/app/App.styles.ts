@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const AppWrapper = styled.div`
+export const AppRoutesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  //justify-content: center;
+  justify-content: center;
   align-items: center;
-/*  min-width: 640px;
-  min-height: 338px;*/
+  height: calc(100vh - 118px);
 `
