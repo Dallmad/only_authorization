@@ -1,8 +1,9 @@
 import {AxiosResponse} from 'axios'
 import {instance} from './instance'
+import {LoginType} from '../features/Auth';
 
 export const authAPI = {
-    auth(data: any) {
-        return instance.post<AxiosResponse<any>>('createNote', data)
+    login(data: LoginType) {
+        return instance.post<AxiosResponse<any>>('login', data)
     }
 }

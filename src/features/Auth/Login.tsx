@@ -1,18 +1,23 @@
 import React from 'react';
-import {SubmitHandler, useForm, Controller, useWatch, Control, useFormState} from 'react-hook-form';
+import {SubmitHandler, useForm, Controller, useFormState} from 'react-hook-form';
 import {loginValidation, passwordValidation} from './validation';
+import {useTypedDispatch} from '../../state/store';
+import {login} from '../../state/middlewares/auth';
 
-type InputsType = {
+export type LoginType = {
     login: string,
     password: string,
+    checkbox: boolean
 };
 
-export const Authorization: React.FC = () => {
-    const {handleSubmit, control} = useForm<InputsType>();
-    const {error}:any = useFormState({control})
+export const Login: React.FC = () => {
 
-    console.log('error',error)
-    const onSubmit: SubmitHandler<InputsType> = data => console.log(data);
+    const dispatch = useTypedDispatch()
+    const {handleSubmit, control} = useForm<LoginType>();
+    const {errors} = useFormState({control})
+
+    console.log('errors',errors)
+    const onSubmit: SubmitHandler<LoginType> = data => dispatch(login(data));
 
 
     return (
@@ -36,7 +41,9 @@ export const Authorization: React.FC = () => {
                         />
                     )}
                 />
-                {error ? error.message : ''}
+                <div>
+                    {errors.login && errors.login.message}
+                </div>
                 <div>
                     <h4>Пароль</h4>
                 </div>
@@ -53,11 +60,21 @@ export const Authorization: React.FC = () => {
                         />
                     )}
                 />
-                {error ? error.message : ''}
                 <div>
-                    <input
-                        type="checkbox"
+                    {errors.password && errors.password.message}
+                </div>
+                <div>
+                    <Controller
+                        control={control}
                         name={'checkbox'}
+                        render={({field}) => (
+                            <input
+                                type='checkbox'
+                                name={'checkbox'}
+                                checked={field.value||false}
+                                onChange={(e) => field.onChange(e)}
+                            />
+                        )}
                     />
                     <label>Запомнить меня</label>
                 </div>

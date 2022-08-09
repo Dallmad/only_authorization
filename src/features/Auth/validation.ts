@@ -1,7 +1,9 @@
+import {REQUIRED_FIELD} from '../../constants/validation';
+
 export const loginValidation = {
-    required: 'Обязательное поле',
+    required: REQUIRED_FIELD,
     validate: (value: string) => {
-        if(value.match('steve.jobs@example.com')) {
+        if(value.trim()!=='steve.jobs@example.com') {
             return 'Неправильный логин'
         }
         return true
@@ -9,9 +11,9 @@ export const loginValidation = {
 }
 
 export const passwordValidation = {
-    required: 'Обязательное поле',
+    required: REQUIRED_FIELD,
     validate: (value: string) => {
-        if(value.match('password')) {
+        if(value.trim()!=='password') {
             return 'Неправильный пароль'
         }
         return true
