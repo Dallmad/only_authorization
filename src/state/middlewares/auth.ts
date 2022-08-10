@@ -9,9 +9,10 @@ export const login = (data: LoginType) => async (dispatch: TypedDispatch) => {
         const timer = await setTimeout(() => {
             dispatch(setIsLoggedIn(true))
             dispatch(loading(false))
+            authAPI.login(data)
         }, 2500);
         return () => clearTimeout(timer)
-        authAPI.login(data)
+
     } catch (error) {
         if (error instanceof Error) {
             dispatch(loading(false))
