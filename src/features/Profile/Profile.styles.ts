@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ProfileWrapper = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const ProfileWrapper = styled.div`
   font-size: 40px;
   line-height: 48px;
   color: #000000;
-  
+
   label {
     font-weight: 600;
   }
@@ -27,5 +27,6 @@ export const ProfileWrapper = styled.div`
     color: #000000;
     margin-top: 50px;
     border: none;
+    cursor: pointer;
   }
 `

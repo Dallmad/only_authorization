@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, {css} from 'styled-components'
 
 const fontStylesField = css`
   font-style: normal;
@@ -18,14 +18,21 @@ export const LoginWrapper = styled.div`
 
   h4 {
     ${fontStylesField};
-    
     margin: 20px 0 10px 0;
+  }
+
+  p {
+    margin: 8px 0 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #E26F6F;
   }
 
   label {
     ${fontStylesField};
     margin-left: 17px;
-    //margin: 20px 0 10px 17px;
   }
 
   button {
@@ -48,11 +55,11 @@ export const LoginWrapper = styled.div`
   }
 `
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{ error: boolean }>`
   ${sizeFieldsStyles};
   background: #F5F5F5;
   border-radius: 8px;
-  border: none;
+  border: ${({error}) => error ? '1px solid #E26F6F' : 'none'};
   ${fontStylesField};
   color: #232323;
 
@@ -115,5 +122,3 @@ export const StyledErrorButton = styled.div`
     margin-right: 14px;
   }
 `
-
-//export const StyledErrorField

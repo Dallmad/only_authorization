@@ -1,1 +1,5 @@
-export type x= any
+export type LoginType = {
+    login: string,
+    password: string,
+    checkbox: boolean
+}

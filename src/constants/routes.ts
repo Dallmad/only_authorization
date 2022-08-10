@@ -1,5 +1,5 @@
 export const PATH = {
-    AUTHORIZATION:'/authorization',
+    LOGIN:'/login',
     PROFILE:'/profile',
     ERROR404: '/404',
 }
