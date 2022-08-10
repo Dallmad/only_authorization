@@ -1,11 +1,5 @@
-import {LOADING, SET_ERROR, SET_IS_LOGGED_IN} from '../../constants/auth';
-import {loading, setError, setIsLoggedIn} from '../actions/auth';
-
-const initialState = {
-    isLoggedIn: false,
-    isLoading: false,
-    error: '',
-}
+import {initialState, LOADING, SET_ERROR, SET_IS_LOGGED_IN} from '../../../constants/auth'
+import {AuthActionsType, InitialStateType} from './types'
 
 export const authReducer = (state: InitialStateType = initialState, action: AuthActionsType): InitialStateType => {
     switch (action.type) {
@@ -19,10 +13,3 @@ export const authReducer = (state: InitialStateType = initialState, action: Auth
             return state
     }
 }
-
-// types
-type InitialStateType = typeof initialState
-export type AuthActionsType =
-    ReturnType<typeof setIsLoggedIn>
-    | ReturnType<typeof loading>
-    | ReturnType<typeof setError>

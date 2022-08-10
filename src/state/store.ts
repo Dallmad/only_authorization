@@ -1,7 +1,7 @@
 import {useDispatch} from 'react-redux'
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import thunkMiddleware, {ThunkDispatch} from 'redux-thunk'
-import {AuthActionsType, authReducer} from './reducers/auth';
+import {AuthActionsType, authReducer} from './reducers/auth/auth'
 
 const rootReducer = combineReducers({
     auth: authReducer
