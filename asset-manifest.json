@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/only_authorization/static/js/main.a9bc239d.js",
+    "index.html": "/only_authorization/index.html",
+    "main.a9bc239d.js.map": "/only_authorization/static/js/main.a9bc239d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a9bc239d.js"
+  ]
+}
